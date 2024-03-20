@@ -1261,7 +1261,6 @@ index 7e15ae1..a04faff 100644
  endif
  
  CFG_DEBUG_INFO ?= y
-
 diff --git a/core/arch/arm/kernel/kern.ld.S b/core/arch/arm/kernel/kern.ld.S
 index f37e015..4bd65c6 100644
 --- a/core/arch/arm/kernel/kern.ld.S
