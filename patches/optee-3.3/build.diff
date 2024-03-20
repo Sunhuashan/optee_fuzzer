@@ -122,3 +122,4 @@ index a705cfc..7da7c6e 100644
  optee-os: optee-os-common
  
  OPTEE_OS_CLEAN_COMMON_FLAGS += PLATFORM=vexpress-qemu_armv8a
+\ No newline at end of file
