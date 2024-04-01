@@ -46,16 +46,16 @@ static inline void print_invoke_syscall_info(uint32_t scn, uint32_t* args) {
         len += snprintf(buf + len, sizeof(buf) - len, "%x", args[i]);
     }
 
-    len += snprintf(buf + len, sizeof(buf) - len, ")");
+    len += snprintf(buf + len, sizeof(buf) - len, ")\n");
 
-    utee_log(buf, len);
+    _utee_log(buf, len);
 }
 
 static inline void print_post_invoke_syscall_info(uint32_t scn, uint32_t* args, uint32_t ret_val) {
     if (ret_val == TEE_SUCCESS) {
         switch (scn) {
             case TEE_SCN_STORAGE_ENUM_ALLOC:
-            case TEE_SCN_SE_SERVICE_OPEN:
+            case TEE_SCN_SE_SERVICE_OPEN__DEPRECATED:
                 printf(" [*%p = %x]\n", args[0], *((uint32_t*)args[0]));
                 break;
 
