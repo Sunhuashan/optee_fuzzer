@@ -81,8 +81,6 @@
     ({ \
         size_t data_buf_size = (buf_ptr) ? ((uintptr_t)buf_ptr ## _append_p - (uintptr_t)buf_ptr) : 0; \
         \
-        EMSG("dat: %p:%x %s", data_ptr, data_len, beautify_data(data_ptr, data_len)); \
-        \
         assert(data_ptr != NULL); \
         assert(data_len < 0x10000000); \
         \
@@ -91,7 +89,7 @@
         \
         assert(buf_ptr != NULL); \
         \
-        assert(tee_svc_copy_from_user(buf_ptr ## _append_p, data_ptr, data_len) == TEE_SUCCESS); \
+        assert(copy_from_user(buf_ptr ## _append_p, data_ptr, data_len) == TEE_SUCCESS); \
         \
         buf_ptr ## _append_p = (uintptr_t)buf_ptr ## _append_p + data_len; \
         \
